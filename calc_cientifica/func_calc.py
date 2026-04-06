@@ -4,7 +4,7 @@ import mult
 import divi
 import pwr
 import squarert 
-
+import cotacao
 def calc():
     op = input("Qual operação você deseja utilizar? Digite o nome da operação sem acento. " ).strip().lower()
     a = float(input("Qual o primeiro número? "))
@@ -23,7 +23,12 @@ def calc():
             print("Seu resultado é ", pwr.pwr(a, b))
         case "raiz quadrada": 
             print("Seu resultado é ", squarert.sqrt(a))
-        
+        case "conversão": 
+            print("O valor do dolár é ", cotacao.cotacao_dolar())
+            dol = input("Deseja converter o primeiro valor?")
+            if dol == "sim":
+                print(a/cotacao.cotacao_dolar())
+            else: print("Fim do programa")
         case _ :
             print("Algo deu errado, será você digitou algo errado sem querer?")
         
